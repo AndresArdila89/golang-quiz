@@ -48,91 +48,16 @@
 <div class="btn-toolbar mb-3 justify-content-center align-content-center" role="toolbar"
   aria-label="Toolbar with button groups">
   <div class="btn-group me-2 align-center" role="group" aria-label="First group">
-    <button onclick="choose(0)" type="button" class="btn btn-outline-secondary">
-      A
-    </button>
-    <button onclick="choose(1)" type="button" class="btn btn-outline-secondary">
-      B
-    </button>
-    <button onclick="choose(2)" type="button" class="btn btn-outline-secondary">
-      C
-    </button>
-    <button onclick="choose(3)" type="button" class="btn btn-outline-secondary">
-      D
-    </button>
-    <button onclick="choose(4)" type="button" class="btn btn-outline-secondary">
-      E
-    </button>
-    <button onclick="choose(5)" type="button" class="btn btn-outline-secondary">
-      F
-    </button>
-    <button onclick="choose(6)" type="button" class="btn btn-outline-secondary">
-      G
-    </button>
-    <button onclick="choose(7)" type="button" class="btn btn-outline-secondary">
-      H
-    </button>
-    <button onclick="choose(8)" type="button" class="btn btn-outline-secondary">
-      I
-    </button>
-    <button onclick="choose(9)" type="button" class="btn btn-outline-secondary">
-      J
-    </button>
-    <button onclick="choose(10)" type="button" class="btn btn-outline-secondary">
-      K
-    </button>
-    <button onclick="choose(11)" type="button" class="btn btn-outline-secondary">
-      L
-    </button>
-    <button onclick="choose(12)" type="button" class="btn btn-outline-secondary">
-      M
-    </button>
-    <button onclick="choose(13)" type="button" class="btn btn-outline-secondary">
-      N
-    </button>
-    <button onclick="choose(14)" type="button" class="btn btn-outline-secondary">
-      O
-    </button>
-    <button onclick="choose(15)" type="button" class="btn btn-outline-secondary">
-      P
-    </button>
+        {{range $i, $a := .}}        
+        <!-- {{$a}} : {{$i}} -->
+          <button onclick="choose('{{$i}}')"
+                  type="button"
+                  class="btn btn-outline-secondary"> {{$a}}
+                </button>
+        {{end}}
   </div>
 </div>
 
-<div class="btn-toolbar justify-content-center align-content-center" role="toolbar"
-  aria-label="Toolbar with button groups">
-  <div class="btn-group" role="group" aria-label="First group">
-    <button onclick="choose(16)" type="button" class="btn btn-outline-secondary">
-      Q
-    </button>
-    <button onclick="choose(17)" type="button" class="btn btn-outline-secondary">
-      R
-    </button>
-    <button onclick="choose(18)" type="button" class="btn btn-outline-secondary">
-      S
-    </button>
-    <button onclick="choose(19)" type="button" class="btn btn-outline-secondary">
-      T
-    </button>
-    <button onclick="choose(20)" type="button" class="btn btn-outline-secondary">
-      U
-    </button>
-    <button onclick="choose(21)" type="button" class="btn btn-outline-secondary">
-      V
-    </button>
-    <button onclick="choose(22)" type="button" class="btn btn-outline-secondary">
-      W
-    </button>
-    <button onclick="choose(23)" type="button" class="btn btn-outline-secondary">
-      X
-    </button>
-    <button onclick="choose(24)" type="button" class="btn btn-outline-secondary">
-      Y
-    </button>
-    <button onclick="choose(25)" type="button" class="btn btn-outline-secondary">
-      Z
-    </button>
-  </div>
 </div>
 <div class="player-container">
   <p id="player_input" class="player-input-style"></p>
