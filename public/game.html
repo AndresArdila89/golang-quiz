@@ -47,15 +47,18 @@
 <hr />
 <div class="btn-toolbar mb-3 justify-content-center align-content-center" role="toolbar"
   aria-label="Toolbar with button groups">
+  {{range $i, $a := .}}
+  <!-- {{$a}} : {{$i}} -->
+
+  {{ if or (eq $i 14) (eq $i 0) }}
   <div class="btn-group me-2 align-center" role="group" aria-label="First group">
-        {{range $i, $a := .}}        
-        <!-- {{$a}} : {{$i}} -->
-          <button onclick="choose('{{$i}}')"
-                  type="button"
-                  class="btn btn-outline-secondary"> {{$a}}
-                </button>
-        {{end}}
+    {{end}}
+    <button onclick="choose('{{$i}}')" type="button" class="btn btn-outline-secondary"> {{$a}}
+    </button>
+    {{ if or (eq $i 13) (eq $i 25) }}
   </div>
+  {{end}}
+  {{end}}
 </div>
 
 </div>
