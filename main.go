@@ -23,7 +23,9 @@ func main() {
 
 func serveTemplate(w http.ResponseWriter, r *http.Request) {
 	lp := filepath.Join("public/template", "layout.html")
-	fp := filepath.Join("public/template", filepath.Clean(r.URL.Path))
+	fp := filepath.Join("public", filepath.Clean(r.URL.Path))
+
+	log.Println(fp)
 
 	tmpl, _ := template.ParseFiles(lp, fp)
 	tmpl.ExecuteTemplate(w, "layout", nil)
