@@ -9,6 +9,11 @@ import (
 	"path/filepath"
 )
 
+// type person struct {
+// 	Name     string
+// 	Lastname string
+// }
+
 func main() {
 
 	fileServer := http.FileServer(http.Dir("./public/"))
@@ -22,13 +27,46 @@ func main() {
 }
 
 func serveTemplate(w http.ResponseWriter, r *http.Request) {
+
 	lp := filepath.Join("public/template", "layout.html")
 	fp := filepath.Join("public", filepath.Clean(r.URL.Path))
 
 	log.Println(fp)
 
 	tmpl, _ := template.ParseFiles(lp, fp)
-	tmpl.ExecuteTemplate(w, "layout", nil)
+	// temp := person{
+	// 	Name:     "Andres",
+	// 	Lastname: "Ardilla",
+	// }
+	letters_array := [26]string{
+		"A",
+		"B",
+		"C",
+		"D",
+		"E",
+		"F",
+		"G",
+		"H",
+		"I",
+		"J",
+		"K",
+		"L",
+		"M",
+		"N",
+		"O",
+		"P",
+		"Q",
+		"R",
+		"S",
+		"T",
+		"U",
+		"V",
+		"W",
+		"X",
+		"Y",
+		"Z",
+	}
+	tmpl.ExecuteTemplate(w, "layout", letters_array)
 }
 
 func playRound(w http.ResponseWriter, r *http.Request) {
