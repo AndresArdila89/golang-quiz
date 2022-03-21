@@ -5,101 +5,40 @@
     <hr />
     <br />
 
-    <div
-      id="bubble1"
-      style="
-        display: none;
-        height: 150px;
-        width: 150px;
-        border-radius: 30px;
-        margin-left: 260px;
-        float: left;
-        background-color: rgb(115, 170, 144);
-      "
-    >
-      <div
-        style="
-          height: 110px;
-          width: 110px;
-          border-radius: 20px;
-          margin: 15px 0px 0px 20px;
-          background-color: rgb(113, 175, 146);
-        "
-      >
-        <p id="cube1" style="font-size: 90px; text-align: center"></p>
+    <div id="bubble1" class="bubble">
+      <div class="cube1Div">
+        <p id="cube1" class="cube1"></p>
       </div>
     </div>
     <div
       id="bubble2"
-      style="
-        display: none;
-        height: 150px;
-        width: 150px;
-        border-radius: 30px;
-        float: left;
-        margin-left: 100px;
-        background-color: rgb(129, 167, 98);
-      "
+  
+      class="bubble"
     >
       <div
-        style="
-          height: 110px;
-          width: 110px;
-          border-radius: 20px;
-          margin: 15px 0px 0px 20px;
-          background-color: rgb(141, 175, 113);
-        "
+       class="cube1Div"
       >
-        <p id="cube2" style="font-size: 90px; text-align: center"></p>
+        <p id="cube2" class="cube2"></p>
       </div>
     </div>
     <div
       id="bubble3"
-      style="
-        display: none;
-        height: 150px;
-        width: 150px;
-        border-radius: 30px;
-        float: left;
-        margin-left: 100px;
-        background-color: rgb(100, 168, 170);
-      "
+      class="bubble"
     >
       <div
-        style="
-          height: 110px;
-          width: 110px;
-          border-radius: 20px;
-          margin: 15px 0px 0px 20px;
-          background-color: rgb(76, 177, 180);
-        "
+      class="cube1Div"
       >
-        <p id="cube3" style="font-size: 90px; text-align: center"></p>
+        <p id="cube3" class="cube3"></p>
       </div>
     </div>
     <div
       id="bubble4"
-      style="
-        display: none;
-        height: 150px;
-        width: 150px;
-        border-radius: 30px;
-        float: left;
-        margin-left: 100px;
-        margin-right: 150px;
-        background-color: rgb(91, 133, 173);
-      "
+      class="bubble"
     >
       <div
-        style="
-          height: 110px;
-          width: 110px;
-          border-radius: 20px;
-          margin: 15px 0px 0px 20px;
-          background-color: rgb(113, 145, 175);
-        "
+      class="cube1Div"
       >
-        <p id="cube4" style="font-size: 90px; text-align: center"></p>
+        <p id="cube4" class="cube4"></p>
       </div>
     </div>
     <br />
@@ -112,11 +51,11 @@
     <br />
     <br />
     <hr />
-    <div style="margin: auto; width: 50%; margin-right: 160px">
+    <div class="btn-start-section">
       <button id="BtnStart" class="btn btn-group-sm btn-outline-dark col-6">
         Start Game
       </button>
-      <button onClick="window.location.reload();" id="BtnRestart" class="btn btn-group-sm btn-outline-dark col-6"
+      <button onClick="window.location.reload();" id="BtnRestart" class="btn btn-group-sm btn-outline-dark col-6" 
       style="visibility:hidden;" >
         Restart
       </button>
@@ -325,19 +264,12 @@
         </button>
       </div>
     </div>
-    <div style="margin-top: 50px">
+    <div class="player-container">
       <p
         id="player_input"
-        style="
-          text-align: center;
-          font-size: 100px;
-          font-weight: 500;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
-            sans-serif;
-        "
+        class="player-input-style"
       ></p>
-      <p id="answer" style="font-size: 90px;text-align: center;
-      font-weight: 400;font-style: italic;color: rgba(26, 119, 206, 0.342);"></p>
+      <p id="answer" class="player-answer"></p>
     </div>
   
     

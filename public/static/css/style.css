@@ -6,3 +6,99 @@
     All main styles from the HTML file should go here ...
 */
 
+.bubble {
+    
+    height: 150px;
+    width: 150px;
+    float: left;
+    border-radius: 30px;
+}
+
+#bubble1 {
+    display: none;
+    margin-left: 260px;
+    background-color: rgb(115, 170, 144);
+}
+
+#bubble2 {
+    display: none;
+    margin-left: 100px;
+    background-color: rgb(129, 167, 98);
+}
+
+#bubble3 {
+    display: none;
+    margin-left: 100px;
+    background-color: rgb(100, 168, 170);
+}
+
+#bubble4 {
+    display: none;
+    margin-left: 100px;
+    margin-right: 150px;
+    background-color: rgb(91, 133, 173);
+}
+
+.cube1Div {
+    height: 110px;
+    width: 110px;
+    border-radius: 20px;
+    margin: 15px 0px 0px 20px;
+    background-color: rgb(113, 175, 146);
+}
+.cube {
+    font-size: 90px;
+    text-align: center
+}
+
+#cube1 {
+    
+}
+
+#cube2 {
+    background-color: rgb(141, 175, 113);
+}
+
+#cube3 {
+    background-color: rgb(76, 177, 180);
+}
+
+#cube4 {
+    background-color: rgb(113, 145, 175);
+}
+
+.player-container {
+    margin-top: 50px
+}
+
+.player-paragraph {
+    text-align: center;
+    font-size: 100px;
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+    sans-serif;
+}
+
+.player-answer {
+    font-size: 90px;
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(26, 119, 206, 0.342);
+}
+
+
+.btn-start-section {
+
+    margin: auto; 
+    width: 50%; 
+    margin-right: 160px
+    
+}
+
+.restar-visibility {
+
+    visibility:hidden;
+}
+
+
