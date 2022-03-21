@@ -6,10 +6,27 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"path/filepath"
 )
 
-func homePage(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "Index.html")
+func main() {
+
+	fileServer := http.FileServer(http.Dir("./public/"))
+	http.Handle("/public/", http.StripPrefix("/public/", fileServer))
+
+	http.HandleFunc("/", serveTemplate)
+	http.HandleFunc("/play", playRound)
+
+	log.Println("Starting the web server at port 8080")
+	http.ListenAndServe(":8080", nil)
+}
+
+func serveTemplate(w http.ResponseWriter, r *http.Request) {
+	lp := filepath.Join("public/template", "layout.html")
+	fp := filepath.Join("public/template", filepath.Clean(r.URL.Path))
+
+	tmpl, _ := template.ParseFiles(lp, fp)
+	tmpl.ExecuteTemplate(w, "layout", nil)
 }
 
 func playRound(w http.ResponseWriter, r *http.Request) {
@@ -24,25 +41,4 @@ func playRound(w http.ResponseWriter, r *http.Request) {
 	log.Println(out)
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(out)
-}
-
-func main() {
-	http.HandleFunc("/", homePage)
-	http.HandleFunc("/play", playRound)
-
-	log.Println("Starting the web server at port 8080")
-	http.ListenAndServe(":8080", nil)
-}
-func renderTemplate(w http.ResponseWriter, page string) {
-	t, err := template.ParseFiles(page)
-	if err != nil {
-		log.Println(err)
-		return
-	}
-
-	err = t.Execute(w, nil)
-	if err != nil {
-		log.Println(err)
-		return
-	}
 }
